@@ -5,6 +5,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart';
 import 'package:phone_app/components/input_text_field.dart';
 import 'package:phone_app/pages/password_reset_page.dart';
+import 'package:phone_app/pages/tab_layout.dart';
 import 'package:phone_app/services/social_media_authentication.dart';
 import 'package:provider/provider.dart';
 import '../provider/user_data_provider.dart';
@@ -122,7 +123,7 @@ class _LoginPageState extends State<LoginPage> {
 
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage(title: 'Home Page')),
+        MaterialPageRoute(builder: (context) => const TabLayout()),
       );
     } else {
       String message;

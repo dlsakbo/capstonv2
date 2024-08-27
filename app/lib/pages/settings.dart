@@ -26,8 +26,6 @@ class Setting extends StatefulWidget {
 }
 
 class _Setting extends State<Setting> {
-  int _currentIndex = 3; // Set the current index to 2 for Settings page
-
   // functions for signing out, depending on how he signed in. Clear the data
   Future<void> _handleLogout(BuildContext context) async {
     if (_googleSignIn.currentUser != null) {
@@ -65,18 +63,6 @@ class _Setting extends State<Setting> {
         appBar: AppBar(
           backgroundColor: kLoginRegisterBtnColour
               .withOpacity(0.9), // Set the background color
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back),
-            color: Colors.white,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HomePage(title: 'Home Page'),
-                ),
-              );
-            },
-          ),
           title: Text(
             'Settings',
             style: kSubSubTitleOfPage,
@@ -191,7 +177,6 @@ class _Setting extends State<Setting> {
               ],
             ),
           ),
-        ),
-        bottomNavigationBar: BottomNavBar(initialIndex: _currentIndex));
+        ));
   }
 }
